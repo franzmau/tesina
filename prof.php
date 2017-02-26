@@ -65,11 +65,11 @@ include("actions.php");
             </div>
              <ul class="menu">
                 <li class="current"><a href="prof.php" class="clr-1">Inicio</a></li>
-                  <li><a href="evaluar.php" class="clr-3">   &nbsp;&nbsp;&nbsp;</a></li>
+                  <li><a href="evaluar.php" class="clr-3">  </a></li>
                 <li><a href="examen.php" class="clr-2">Examen</a></li>
-                  
-                <li><a href="gallery.html" class="clr-4"> &nbsp;&nbsp;</a></li> 
-                <li><a href="evaluar.html" class="clr-5">Ver rendimiento</a></li>
+                  <li><a href="evaluar.html" class="clr-4">Rendimiento</a></li>
+                <li><a href="logout.php" class="clr-5"> Salir</a></li> 
+               
             </ul>
          </nav>
     </header>   

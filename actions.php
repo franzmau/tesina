@@ -31,5 +31,5 @@ function llenar($id){
 
 
 }
-echo "hola";
+
 ?>
