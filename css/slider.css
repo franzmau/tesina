@@ -13,3 +13,16 @@
 
 .banner{display:none;}
 
+
+
+
+/*--------- slider ---------*/
+#sli { position:relative; overflow:hidden; width:828px; padding:40px 36px 0 36px; z-index:2;}
+
+.slid { width:828px; height:386px; margin:0 auto; position:relative; z-index:2; }
+
+
+.pr {position:absolute; top:217px; left:45px; display:block; width:55px; height:763px; background:url(../images/prev.png) 0 0 no-repeat; z-index:99;}
+.pr:hover {background-position:0 bottom;}
+.nex {position:absolute; top:217px; right:45px; display:block; width:55px; height:63px; background:url(../images/next.png) 0 bottom no-repeat; z-index:99;}
+.nex:hover {background-position:0 0;}

@@ -1,7 +1,14 @@
+<?php
+include('session_a.php');
+include('action.php');
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Profesores</title>
+    <title>Alumno</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
@@ -52,64 +59,67 @@
             <div id="slide">		
                 <div class="slider">
                     <ul class="items">
-                        
-                        
-                        <li><img src="images/slider-3.jpg" alt="" /></li>
-                        <li><img src="images/slider-1.jpg" alt="" /></li>
-                        <li><img src="images/slider-2.jpg" alt="" /></li>
+                       <li><img src="images/gallery-big-1.jpg" alt=""></li>
+                        <li><img src="images/gallery-big-2.jpg" alt=""></li>
+                        <li><img src="images/gallery-big-3.jpg" alt=""></li>
+                        <li><img src="images/gallery-big-4.jpg" alt=""></li>
+                        <li><img src="images/gallery-big-5.jpg" alt=""></li>
+                        <li><img src="images/gallery-big-6.jpg" alt=""></li>
+                        <li><img src="images/gallery-big-7.jpg" alt=""></li>
+                        <li><img src="images/gallery-big-8.jpg" alt=""></li>
                     </ul>
                 </div>	
                 <a href="#" class="prev"></a><a href="#" class="next"></a>
             </div>
              <ul class="menu">
-                <li ><a href="index.html" class="clr-1">Inicio</a></li>
-                  <li><a href="schedule.html" class="clr-3">   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-                <li><a  class="current"href="profesor.html" class="clr-2">Profesor</a></li>
+                <li class="current"><a href="alumno.php" class="clr-1">Inicio</a></li>
+                  <li><a href="" class="clr-3">   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                <li><a href=<?php echo "progreso.php?id=".$user_check ;?> class="clr-2">Mi progreso </a></li>
                   
-                <li><a href="gallery.html" class="clr-4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a></li> 
-                <li><a href="alumno.html" class="clr-5">Alumno</a></li>
+                <li><a href="progreso.php" class="clr-4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a></li> 
+                <li><a href="logout.php" class="clr-5">Salir</a></li>
             </ul>
          </nav>
     </header>   
-    <section id="content"><div class="ic"></div>
-        <div class="container_12">	
+
+     <section id="content"><div class="ic"></div>
+        <div class="container_12">  
           <div class="grid_4 bot-1">
-            <h2 class="top-6 p2">Acceder al sistema. </h2>
-			
-			<p class="text-1">
-			 Recuerda que primero Mauricio te debe de dar de alta a ti y a tus alumnos.
-			Acceder al sistema es muy sencillo, debes de seguir estos pasos. </p>
-			<ul class="list-1">
-            	<li>Recibir tu usuario y contraseña de Mauricio y entrar al sistema </li>
+            <h2 class="top-6 p2">Hola.</h2>
+      <p class="text-1">
+      Gracias por participar  </p>
+      <ul class="list-1">
+              <li>Recibir tu usuario y contraseña de Mauricio y entrar al sistema </li>
                 <li>Seleccionar un grupo al que quieras realizar examenes. </li>
                 <li>Poner la pregunta. </li>
                 <li> Poner la respuesta correcta</li>
                 <li>Guardarlo</li>
             </ul>
             <p class="text-1">
-		 </p>
+      Si lo que deseas es ver las calificaciones de una prueba ya contestada, debes apretar el botón de visualizar calificaciones. </p>
           </div>
           <div class="grid_8">
             <div class="block-1 top-5">
-            	<div class="block-1-shadow">
-                	<h2 class="clr-6 p4">Acceder al sistema.</h2>
+              <div class="block-1-shadow">
+                  <h2 class="clr-6 p4">Pruebas Pendientes</h2>
                     <div class="pag">
-                      <form action="check_p.php" method="post">
-							  <label for="user" > Usuario </label> <br>
-							  <input id="user"type="text" name="user"
-							  style="border:#e0e0e1 1px solid; background:#fff; font-size:14px; font-family: Georgia, 'Times New Roman', Times, serif; color:#000;padding:3px 10px 5px 10px;outline: medium none;width: 247px; height:17px; float:left; box-shadow: 0 0 3px #c1c1c1;"  >
-							  <br><br>
-							   <label for ="password" > Contraseña </label> <br>
-							  <input type="password" id="password" name="password" style="border:#e0e0e1 1px solid; background:#fff; font-size:14px; font-family: Georgia, 'Times New Roman', Times, serif; color:#000;padding:3px 10px 5px 10px;outline: medium none;width: 247px; height:17px; float:left; box-shadow: 0 0 3px #c1c1c1;">
-							  <br><br>
-							
-							
-                  	</div>
-                    <div class="clear"></div>
-                    	<div class="pad-2">
-                    	  <input class="link-2" type="submit" value="Entrar">
-                    </form> 
-                    	</div>
+
+                    <table class="table">
+
+                     <thead>
+                     <tr>
+                        	<th hidden>id</th>
+                            <th>Nombre de la prueba</th>
+                            
+                            <th class="last">Realizar prueba</th>
+                            
+                        </tr>
+                        </thead>
+                      <?php
+                      llenar($_SESSION['id_salon'],$_SESSION['pid']);
+                      ?> 
+                      </table>
+                    </div>
                 </div>
             </div>
             <!--==============================footer=================================-->
@@ -117,4 +127,4 @@
           </div>
           <div class="clear"></div>
         </div>
-    </section> 
+    </section> </div></body></html>

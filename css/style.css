@@ -93,7 +93,7 @@ ul.menu li:hover a , ul.menu li.current a { color:#000;}
 
 /*********************************content*************************************/
 #content {width:1000px; margin:0 auto; background:url(../images/content-img.png) 1px bottom no-repeat; }
-.art {background:url(../images/as.jpg) 0 0 no-repeat; width:320px; height:159px; margin:0 0 0 -30px;}
+.art {background:url(../images/as.png) 0 0 no-repeat; width:325px; height:195px; margin:10 0 0 -30px;}
 
 .block-1 {background: url(../images/block-1.gif) 0 bottom repeat-x #fff;}
 .block-1-shadow {background:url(../images/block-1-shadow.png) 0 0 repeat-y; padding:18px 30px 0 30px;}

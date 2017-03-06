@@ -1,10 +1,15 @@
 <?php 
 include('session.php');
 include('examen_c.php');
+$id_examen=$_GET["examen"];
+ini_set('display_startup_errors', 1);
+ini_set('display_errors', 1);
+error_reporting(-1);
+
 ?>
 
 <head>
-    <title>Examenes</title>
+    <title>Examen</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
@@ -109,13 +114,13 @@ include('examen_c.php');
     <section id="content"><div class="ic"></div>
         <div class="container_12">	
           <div class="grid_4 bot-1">
-            <h2 class="top-6 p2">Crea tu examen.</h2>
+            <h2 class="top-6 p2">Editar tu examen.</h2>
             <p class="text-1">
-			 A tu derecha podrá crear un examen. Deberas:  </p>
+			 A tu derecha podrá editar un examen. Deberas tomar en cuenta:  </p>
 			<ul class="list-1">
-            	<li>Poner una imagen con la pregunta o escribir las preguntas.</li>
-                <li>Escribir las respuestas.  </li>
-                <li>Seleccionar al grupo que hará el examen. </li>    
+            	<li>Solo se puede actualizar un examen a la vez.</li>
+                <li>Se borrarán todas las preguntas que se hayan realizado a este examen.  </li>
+                <li>No se puede cambiar de grupo el examen.  </li>    
             </ul>
 
 
@@ -130,40 +135,43 @@ include('examen_c.php');
                 	<h2 class="clr-6 p4">Examen </h2>
                    <div class="pag">
                   <form method="post"  action="subir_examen.php">
-
+                   <input type= 'hidden' name='id_ex' value= <?php echo $id_examen;?>> </input>
                    <label style="float:left; display:inline-block; padding-top:3px; width:82px; color:#000; line-height:20px;" ><strong>Nombre:</strong><br>
-                   <input style="border:#e0e0e1 1px solid; background:#fff; font-size:14px; font-family: Georgia, 'Times New Roman', Times, serif; color:#000;padding:3px 10px 5px 10px;outline: medium none;width: 247px; height:17px; float:left; box-shadow: 0 0 3px #c1c1c1;" type="text"  name="nombre" value=""><strong class="clear"></strong></label><br><br>
+                   <input style="border:#e0e0e1 1px solid; background:#fff; font-size:14px; font-family: Georgia, 'Times New Roman', Times, serif; color:#000;padding:3px 10px 5px 10px;outline: medium none;width: 247px; height:17px; float:left; box-shadow: 0 0 3px #c1c1c1;" type="text"  name="nombre" value=
+                   <?php poner_nombre($id_examen); ?>  > <strong class="clear"></strong></label><br><br>
+
+
 
                    <div class="input_fields_wrap">
+                   
                    <br>
-                      
+                     
                       <br><br>
                       <div>
                       <label> <strong>Pregunta:&nbsp;&nbsp;&nbsp;&nbsp; </strong> </label>
 
-                      <textarea style="border:#e0e0e1 1px solid; background:#fff; font-size:14px; font-family: Georgia, "Times New Roman", Times, serif; color:#000;padding:3px 10px 5px 10px;outline: medium none;width: 547px; height:17px; float:left; box-shadow: 0 0 3px #c1c1c1;" name="mytext[]" cols="40" rows="5"></textarea>
+                      <?php 
+                      poner_tabla($id_examen);
 
-                     <br>
-                      <label> <strong> Respuesta:&nbsp;&nbsp; </strong> </label>
-                      <input style="border:#e0e0e1 1px solid; background:#fff; font-size:14px; font-family: Georgia, "Times New Roman", Times, serif; color:#000;padding:3px 10px 5px 10px;outline: medium none;width: 247px; height:17px; float:left; box-shadow: 0 0 3px #c1c1c1;" type="text" name="mytext1[]">
+                      ?>
+
                       
-                      <br>
-                       <label> <strong> Ayuda:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong> </label>
-                      <textarea style="border:#e0e0e1 1px solid; background:#fff; font-size:14px; font-family: Georgia, "Times New Roman", Times, serif; color:#000;padding:3px 10px 5px 10px;outline: medium none;width: 547px; height:17px; float:left; box-shadow: 0 0 3px #c1c1c1;" name="mytext2[]" cols="40" rows="5"></textarea>
-                      </div>
                   </div><br>
-                  <button  class="add_field_button link">Agregar pregunta</button>
+
+                   <button  class="add_field_button link">Agregar pregunta</button>
+
 
                   <br>
                   <br>
                    <label> <strong> Salón: </strong> </label>
+                    <label><strong>
                    <?php
+                  poner_salo($id_examen);
+                 
+                   ?> </strong></label>
+                  <br><br>
 
-                  poner_salon($_SESSION['pid']);
-                   ?>
-                  
-
-                   <input class="link-2" type="submit" onclick='return confirm("¿Deseas subir el examen ahora? ")' value="Subir examen">
+                   <input class="link-2" type="submit" name="ex" onclick='return confirm("¿Deseas subir el examen ahora? ")' value="Subir examen">
 
 
 

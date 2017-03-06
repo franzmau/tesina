@@ -31,8 +31,33 @@ include("actions.php");
 				banners:false,
 				waitBannerAnimation:false,
 				progressBar:false
-			})		
+			});
+
+
+
+
+
+		
+
+
+
+
+
+
 		});
+
+
+
+
+		
+
+
+
+
+
+
+
+
 	</script>
 	<!--[if lt IE 8]>
        <div style=' clear: both; text-align:center; position: relative;'>
@@ -55,10 +80,11 @@ include("actions.php");
             <div id="slide">		
                 <div class="slider">
                     <ul class="items">
-                        
+                         <li><img src="images/slider-1.jpg" alt="" /></li>
+                       <li><img src="images/slider-3.jpg" alt="" /></li>
                         <li><img src="images/slider-2.jpg" alt="" /></li>
-                        <li><img src="images/slider-3.jpg" alt="" /></li>
-                        <li><img src="images/slider-1.jpg" alt="" /></li>
+                        
+                       
                     </ul>
                 </div>	
                 <a href="#" class="prev"></a><a href="#" class="next"></a>
@@ -67,7 +93,7 @@ include("actions.php");
                 <li class="current"><a href="prof.php" class="clr-1">Inicio</a></li>
                   <li><a href="evaluar.php" class="clr-3">  </a></li>
                 <li><a href="examen.php" class="clr-2">Examen</a></li>
-                  <li><a href="evaluar.html" class="clr-4">Rendimiento</a></li>
+                  <li><a href="evaluar.php" class="clr-4">Rendimiento</a></li>
                 <li><a href="logout.php" class="clr-5"> Salir</a></li> 
                
             </ul>
@@ -100,6 +126,8 @@ include("actions.php");
                 	<h2 class="clr-6 p4">Tabla de Exámenes</h2>
                     <div class="pag">
                      <table class="table">
+
+                     <thead>
                      <tr>
                         	<th hidden>id</th>
                             <th>Nombre</th>
@@ -107,7 +135,7 @@ include("actions.php");
                             <th class="last">Acciones</th>
                             
                         </tr>
-
+                        </thead>
                         <?php 
                         llenar($_SESSION['pid']);
 
