@@ -1,11 +1,31 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 
+function  poner_area($id){
+	echo "<label style='font-size:20px;'> Area ".$id ."</label><br>";
+	echo '<select style=" font-size:16px; margin: 8px 0;" name="'.$id.'">';
+	
+ 	$db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+   mysqli_query($db,"SET NAMES 'utf8'");
+   		
+     $ses_sql=mysqli_query($db,"select * from area ");
+			
+	 $count = mysqli_num_rows($ses_sql);
+	 if($count>0){
+	 	
+	 		while($row = mysqli_fetch_array($ses_sql)){   //Creates a loop to loop through results
+                 echo "<option value=".$row['id'].">".$row['area']."</option> ";
+			}
+	   	echo"</select><br>";
+	 }
 
+
+
+}
 
 function poner_salon($id){
 
-	echo '<select name="sele">';
+	echo '<br><select style=" font-size:16px; margin: 8px 0;" name="sele">';
 	echo '<option value="0">Todos</option> ';
  	$db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
    mysqli_query($db,"SET NAMES 'utf8'");

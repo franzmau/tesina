@@ -22,6 +22,13 @@ if(isset($_POST['editar']) ) {
 
 	}
 
+if(isset($_POST['view']) ) {
+ $a=$_POST['id'];
+
+ echo "<script> location.href='ver_respuestas.php?examen=$a';</script>";
+
+}
+
 
 
 ?>

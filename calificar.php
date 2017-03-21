@@ -32,7 +32,7 @@ if (isset($_POST['ex'])) {
 		if(strcmp($answer,$a)!=0){
 			
 			$malas=$malas+1;
-			$sql1="INSERT INTO equivocacion (`id_alumno`, `id_examen`, `id_pregunta`) VALUES (".$user_check." ,".$id_examen." , ".$text_field." )";
+			$sql1="INSERT INTO equivocacion (`id_alumno`, `id_examen`, `id_pregunta`,`txt`) VALUES (".$user_check." ,".$id_examen." , ".$text_field." , '".$a ."' )";
 			mysqli_query($db,$sql1);
 
 

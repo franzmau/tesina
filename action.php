@@ -27,7 +27,7 @@ function llenar($id,$id_alumno){
 
 
      $ses_sql=mysqli_query($db,$sql);
-			
+	
 	 $count = mysqli_num_rows($ses_sql);
 	 if($count>0){
 	 	

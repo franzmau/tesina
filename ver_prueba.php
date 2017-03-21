@@ -1,7 +1,10 @@
 <?php 
 include('session_a.php');
-$id_c=$_GET["id"];
-checar($id_c,$user_check);
+include('ver_pruebac.php');
+
+$id_e=$_GET["id"];
+checar($id_e,$user_check);
+
 ?>
 
 
@@ -15,10 +18,16 @@ checar($id_c,$user_check);
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/grid_12.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/slider.css">
+	<script src="js/anime-master/anime.min.js"></script>
+
     <link href='http://fonts.googleapis.com/css?family=Cabin+Sketch:400,700' rel='stylesheet' type='text/css'>
     <script src="js/jquery-1.7.min.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
     <script src="js/tms-0.4.1.js"></script>
+   
+     
+	<script type="text/javascript" src="./js/main.js"></script> 
+	 <script type="text/javascript" src="./js/jsadmin.js"></script> 
     <script>
 		$(document).ready(function(){				   	
 			$('.slider')._TMS({
@@ -39,6 +48,17 @@ checar($id_c,$user_check);
 			})		
 		});
 	</script>
+	<style type="text/css">
+      #player{
+         position: absolute;
+         top: 100px;
+         left: 20px;
+         width: 100px;
+         
+         color: #fff;
+         padding: 15px;
+      }
+   </style>
 	<!--[if lt IE 8]>
        <div style=' clear: both; text-align:center; position: relative;'>
          <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
@@ -65,20 +85,30 @@ checar($id_c,$user_check);
           <div class="grid_8">
             <div  style="align-self: center;"class="block-1 top-5">
               <div class="block-1-shadow">
-                  <h2 class="clr-6 p4"> Pruebas contestadas</h2>
+                  <h2 class="clr-6 p4"> <center>Evaluación</center></h2>
                     <div class="pag">
-                    <form class="form" method="post"  action="calificar.php">
+                   
                      
                       <?php
-                      //llenar($_SESSION['id_salon'],$_SESSION['pid'],$id_examen);
+                      poner_resultado($_SESSION['pid'],$id_e);
                       ?>
+
 
                     
  <br><br>
+  				
+
                 <div class="clear"></div>
                       <div class="pad-2">
-                        <input class="link-2" name="ex" type="submit" value="Terminar Prueba">
-                     </form>
+
+                      <button  class="link-2" onclick="location.href=<?php 
+                      echo "'progreso.php?id=".$user_check."'";
+                      ?> " type="button">
+     Regresar</button>
+
+                      
+                        
+                     
                       </div>
                     </div>
                 </div>

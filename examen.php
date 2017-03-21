@@ -33,7 +33,7 @@ include('examen_c.php');
 				progressBar:false
 			});
 
-    var max_fields      = 10; //maximum input boxes allowed
+    var max_fields      = 30; //maximum input boxes allowed
     var wrapper         = $(".input_fields_wrap"); //Fields wrapper
     var add_button      = $(".add_field_button"); //Add button ID
     
@@ -42,7 +42,7 @@ include('examen_c.php');
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div> <br><br> <label> <strong>Pregunta:&nbsp;&nbsp;&nbsp;&nbsp; </strong> </label> <textarea style="border:#e0e0e1 1px solid; background:#fff; font-size:14px; font-family: Georgia, "Times New Roman", Times, serif; color:#000;padding:3px 10px 5px 10px;outline: medium none;width: 547px; height:17px; float:left; box-shadow: 0 0 3px #c1c1c1; margin: 7px 0 0px 0px; width:560px;" name="mytext[]" cols="40" rows="5"></textarea> <br> <label> <strong> Respuesta:&nbsp;&nbsp;</strong> </label><input style="border:#e0e0e1 1px solid; background:#fff; font-size:14px; font-family: Georgia, "Times New Roman", Times, serif; color:#000;padding:3px 10px 5px 10px;outline: medium none;width: 247px; height:17px; float:left; box-shadow: 0 0 3px #c1c1c1; margin: 7px 0 0px 0px; width:560px;" type="text" name="mytext1[]"> <br> <label> <strong>Ayuda :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong> </label> <textarea style="border:#e0e0e1 1px solid; background:#fff; font-size:14px; font-family: Georgia, "Times New Roman", Times, serif; color:#000;padding:3px 10px 5px 10px;outline: medium none;width: 547px; height:17px; float:left; box-shadow: 0 0 3px #c1c1c1; margin: 7px 0 0px 0px; width:560px;" name="mytext2[]" cols="40" rows="5" ></textarea> <a href="#" class="remove_field">Quitar</a> <br></div>')
+            $(wrapper).append('<div> <br> <label style="font-size:20px;"> <strong>Pregunta:&nbsp;&nbsp;&nbsp;&nbsp; </strong> </label> <br><textarea style="  margin: 8px 0; border:#e0e0e1 1px solid; background:#fff; font-size:18px; font-family: Georgia, \"Times New Roman\", Times, serif; color:#000;padding:3px 10px 5px 10px;outline: medium none;width: 547px; height:17px; float:left; box-shadow: 0 0 3px #c1c1c1; margin: 7px 0 0px 0px; width:560px;" name="mytext[]" cols="40" rows="5"></textarea> <br> <label style="font-size:20px;"> <strong> Respuesta:&nbsp;&nbsp;</strong> </label><br><input style=" margin: 8px; border:#e0e0e1 1px solid; background:#fff; font-size:18px; font-family: Georgia, "Times New Roman", Times, serif; color:#000;padding:3px 10px 5px 10px;outline: medium none;width: 247px; height:22px; float:left; box-shadow: 0 0 3px #c1c1c1; margin: 7px 0 0px 0px; width:560px;" type="text" name="mytext1[]"> <br> <label  style="font-size:20px;"> <strong>Ayuda :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong> </label><br> <textarea style=" margin: 8px; border:#e0e0e1 1px solid; background:#fff; font-size:18px; font-family: Georgia, \"Times New Roman\", Times, serif; color:#000;padding:3px 10px 5px 10px;outline: medium none;width: 547px; height:17px; float:left; box-shadow: 0 0 3px #c1c1c1; margin: 7px 0 0px 0px; width:560px;" name="mytext2[]" cols="40" rows="5" ></textarea>  <a href="#" class="remove_field">Quitar</a> <br></div>');
 
 
 
@@ -98,7 +98,7 @@ include('examen_c.php');
              <ul class="menu">
                 <li ><a href="prof.php" class="clr-1">Inicio</a></li>
                   <li><a href="evaluar.php" class="clr-3">  </a></li>
-                <li class="current"><a href="examen.php" class="clr-2">Examen</a></li>
+                <li class="current"><a href="examen.php" class="clr-2"> Examen</a></li>
                   <li><a href="evaluar.php" class="clr-4">Rendimiento</a></li>
                 <li><a href="logout.php" class="clr-5"> Salir</a></li> 
                
@@ -111,11 +111,15 @@ include('examen_c.php');
           <div class="grid_4 bot-1">
             <h2 class="top-6 p2">Crea tu examen.</h2>
             <p class="text-1">
-			 A tu derecha podrá crear un examen. Deberas:  </p>
+			 A tu derecha están las herramientas para poder crear un examen, deberás:  </p>
 			<ul class="list-1">
-            	<li>Poner una imagen con la pregunta o escribir las preguntas.</li>
-                <li>Escribir las respuestas.  </li>
-                <li>Seleccionar al grupo que hará el examen. </li>    
+      <li>Asignarle un nombre al examen, ejemplo: "Prueba del 25 de marzo del 2017"</li>
+            	<li>Escribir cada una de las preguntas, el alumno verá la pregunta de la misma forma que tu la escribas</li>
+                <li>Escribe cada una de las respuestas.  </li>
+                 <li>Escribe una ayuda para el alumno. <br>La ayuda es algo que se le mostrará al alumno en dado caso de que  haya escrito la respuesta incorrecta. </li>
+                 <li>Seleccionar el área correspondiente, el sistema soporta únicamente 3 áreas por examen. El primer tercio de preguntas correspondan al área 1 el segundo tercio al área 2 y el tercer tercio al area 3. </li>
+                 <li>Puedes pulsar el boton para poder agregar tantas preguntas como quieras  <li> 
+                <li>Seleccionar al grupo que hará el examen. (Puedes seleccionar todos) </li>    
             </ul>
 
 
@@ -131,32 +135,40 @@ include('examen_c.php');
                    <div class="pag">
                   <form method="post"  action="subir_examen.php">
 
-                   <label style="float:left; display:inline-block; padding-top:3px; width:82px; color:#000; line-height:20px;" ><strong>Nombre:</strong><br>
-                   <input style="border:#e0e0e1 1px solid; background:#fff; font-size:14px; font-family: Georgia, 'Times New Roman', Times, serif; color:#000;padding:3px 10px 5px 10px;outline: medium none;width: 247px; height:17px; float:left; box-shadow: 0 0 3px #c1c1c1;" type="text"  name="nombre" value=""><strong class="clear"></strong></label><br><br>
+                   <label style="float:left; display:inline-block; padding-top:3px; width:82px; color:#000; line-height:20px; font-size:22px;"  ><strong>Nombre:</strong><br>
+                   <input style="margin: 8px 0; border:#e0e0e1 1px solid; background:#fff; font-size:18px; font-family: Georgia, 'Times New Roman', Times, serif; color:#000;padding:10px 10px 5px 10px;outline: medium none;width: 247px; height:35px; float:left; box-shadow: 0 0 3px #c1c1c1;" type="text"  name="nombre" value=""><strong class="clear"></strong></label><br><br>
 
                    <div class="input_fields_wrap">
                    <br>
                       
-                      <br><br>
+                     <br>
                       <div>
-                      <label> <strong>Pregunta:&nbsp;&nbsp;&nbsp;&nbsp; </strong> </label>
+                      <label style="font-size:20px;" > <strong>Pregunta:&nbsp;&nbsp;&nbsp;&nbsp; </strong> </label><br>
 
-                      <textarea style="border:#e0e0e1 1px solid; background:#fff; font-size:14px; font-family: Georgia, "Times New Roman", Times, serif; color:#000;padding:3px 10px 5px 10px;outline: medium none;width: 547px; height:17px; float:left; box-shadow: 0 0 3px #c1c1c1;" name="mytext[]" cols="40" rows="5"></textarea>
+                      <textarea style=" margin: 8px 0; border:#e0e0e1 1px solid; background:#fff; font-size:18px; font-family: Georgia, "Times New Roman", Times, serif; color:#000;padding:3px 10px 5px 10px;outline: medium none;width: 547px; height:17px; float:left; box-shadow: 0 0 3px #c1c1c1;" name="mytext[]" cols="40" rows="5"></textarea>
 
                      <br>
-                      <label> <strong> Respuesta:&nbsp;&nbsp; </strong> </label>
-                      <input style="border:#e0e0e1 1px solid; background:#fff; font-size:14px; font-family: Georgia, "Times New Roman", Times, serif; color:#000;padding:3px 10px 5px 10px;outline: medium none;width: 247px; height:17px; float:left; box-shadow: 0 0 3px #c1c1c1;" type="text" name="mytext1[]">
+                      <label style="font-size:20px;"> <strong> Respuesta:&nbsp;&nbsp; </strong> </label><br>
+                      <input style=" margin: 8px 0; border:#e0e0e1 1px solid; background:#fff; font-size:18px; font-family: Georgia, "Times New Roman", Times, serif; color:#000;padding:3px 10px 5px 10px;outline: medium none;width: 247px; height:22px; float:left; box-shadow: 0 0 3px #c1c1c1;" type="text" name="mytext1[]">
                       
                       <br>
-                       <label> <strong> Ayuda:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong> </label>
-                      <textarea style="border:#e0e0e1 1px solid; background:#fff; font-size:14px; font-family: Georgia, "Times New Roman", Times, serif; color:#000;padding:3px 10px 5px 10px;outline: medium none;width: 547px; height:17px; float:left; box-shadow: 0 0 3px #c1c1c1;" name="mytext2[]" cols="40" rows="5"></textarea>
+                       <label style="font-size:20px;"> <strong> Ayuda:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong> </label><br>
+                      <textarea style=" margin: 8px 0;border:#e0e0e1 1px solid; background:#fff; font-size:18px; font-family: Georgia, "Times New Roman", Times, serif; color:#000;padding:3px 10px 5px 10px;outline: medium none;width: 547px; height:17px; float:left; box-shadow: 0 0 3px #c1c1c1;" name="mytext2[]" cols="40" rows="5"></textarea>
+
+                      
+
+
                       </div>
                   </div><br>
                   <button  class="add_field_button link">Agregar pregunta</button>
 
+                  <br><br>
+                  <?php poner_area(1);?>
+                  <?php poner_area(2);?>
+                  <?php poner_area(3);?>
                   <br>
                   <br>
-                   <label> <strong> Salón: </strong> </label>
+                   <label style="font-size:20px;"> <strong> Salón: </strong> </label>
                    <?php
 
                   poner_salon($_SESSION['pid']);
@@ -171,7 +183,7 @@ include('examen_c.php');
                       </div>
             <!--==============================footer=================================-->
            <br>
-          </div>
+          </div></div></div>
           <div class="clear"></div>
         </div>
         <br><br><br>

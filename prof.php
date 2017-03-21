@@ -91,8 +91,8 @@ include("actions.php");
             </div>
              <ul class="menu">
                 <li class="current"><a href="prof.php" class="clr-1">Inicio</a></li>
-                  <li><a href="evaluar.php" class="clr-3">  </a></li>
-                <li><a href="examen.php" class="clr-2">Examen</a></li>
+                  
+                <li><a href="examen.php" class="clr-2"> Examen</a></li>
                   <li><a href="evaluar.php" class="clr-4">Rendimiento</a></li>
                 <li><a href="logout.php" class="clr-5"> Salir</a></li> 
                
@@ -103,12 +103,12 @@ include("actions.php");
     <section id="content"><div class="ic"></div>
         <div class="container_12">	
           <div class="grid_4 bot-1">
-            <h2 class="top-6 p2"> Utilizar el sistema.</h2>
+            <h2 class="top-6 p2"> Utilizando el sistema.</h2>
             <p class="text-1">
-			 A tu derecha tienes los exámenes que tienes activados. Para cada uno puedes: </p>
+			 A tu derecha tienes los exámenes que has diseñado. Para cada uno puedes: </p>
 			<ul class="list-1">
             	<li>Modificar las preguntas.</li>
-                <li>Observar las respuestas de tus alumnos.  </li>
+               <li>Observar las calificaciones de tus alumnos en ese examen. </li>
                 <li>Borrar el examen. </li>
                 
             </ul>
@@ -118,7 +118,7 @@ include("actions.php");
 
 
             <p class="text-1">
-				En la barra superior puedes crear un nuevo examen y  observar el rendimiento de cada alumno y muestra el tipo de retroalimentación que recibió. </p>
+				En la barra superior puedes crear un nuevo examen. <br>Observar el rendimiento de cada alumno a lo largo del experimento. </p>
           </div>
           <div class="grid_8">
             <div class="block-1 top-5">
@@ -126,14 +126,12 @@ include("actions.php");
                 	<h2 class="clr-6 p4">Tabla de Exámenes</h2>
                     <div class="pag">
                      <table class="table">
-
                      <thead>
                      <tr>
                         	<th hidden>id</th>
                             <th>Nombre</th>
                             <th>Salón</th>
                             <th class="last">Acciones</th>
-                            
                         </tr>
                         </thead>
                         <?php 
@@ -145,6 +143,8 @@ include("actions.php");
             <!--==============================footer=================================-->
            
           </div>
+          </div>
+          </div>
           <div class="clear"></div>
         </div>
-    </section> 
+    </section> </div></body>

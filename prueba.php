@@ -79,7 +79,7 @@ $id_examen=$_GET["examen"];
  <br><br>
                 <div class="clear"></div>
                       <div class="pad-2">
-                        <input class="link-2" name="ex" type="submit" value="Terminar Prueba">
+                        <input class="link-2"  onclick='return confirm("¿Seguro que quieres terminar el examen?, Ya no se puede editar después")' name="ex" type="submit" value="Terminar Prueba">
                      </form>
                       </div>
                     </div>

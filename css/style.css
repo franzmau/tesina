@@ -29,17 +29,19 @@ a:hover {text-decoration:none;}
 .clr-6 { color:#000;}
 .clr-7 { color:#fff;}
 
-.text-1 {font-size:18px; line-height:25px; color:#fff; font-style:italic;}
-.text-2 {font-size:16px; line-height:25px; color:#000; font-style:italic;}
+.text-1 {font-size:22px; line-height:25px; color:#fff; font-style:italic;}
+.text-2 {font-size:20px; line-height:25px; color:#000; font-style:italic;}
+
+.cal { font-size:80px; line-height:50px; color:#fff; font-weight:bold; font-family: 'Cabin Sketch', cursive; letter-spacing:-1px;}
 
 h2 { font-size:40px; line-height:50px; color:#fff; font-weight:bold; font-family: 'Cabin Sketch', cursive; letter-spacing:-1px;}
 
 ul {margin:0; padding:0;list-style-image:none;}
-ul.list-1 li {padding:0px 0 0px 14px; line-height:22px; background:url(../images/marker-1.gif) 0 9px no-repeat;}
+ul.list-1 li { font-size:20px; padding:0px 0 0px 14px; line-height:22px; background:url(../images/marker-1.gif) 0 9px no-repeat;}
 ul.list-1 li a { font-size:14px; color:#838180; line-height:22px;}
 ul.list-1 li a:hover {color:#dd0a00;}
 
-ul.list-2 li {padding:0px 0 0px 14px; line-height:22px; background:url(../images/marker-2.gif) 0 9px no-repeat;}
+ul.list-2 li { font-size:20px; padding:0px 0 0px 14px; line-height:22px; background:url(../images/marker-2.gif) 0 9px no-repeat;}
 ul.list-2 li a { font-size:14px; color:#000; line-height:22px;}
 ul.list-2 li a:hover {color:#0072ff;}
 
@@ -77,8 +79,14 @@ ul.list-2 li a:hover {color:#0072ff;}
 .p4 {padding-bottom:13px;}
 .p5 {padding-bottom:19px;}
 .p6 {padding-bottom:5px;}
-.p7 {padding-bottom:12px;}
-
+.p7 {padding-bottom:12px;font-size:20px;}
+.uno {
+  width: 2rem;
+  height: 2rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  mix-blend-mode: lighten;
+}
 /*********************************header*************************************/
 header {width:1000px; margin:0 auto; z-index:101; background:url(../images/header.jpg) right 0 no-repeat; }
 
@@ -134,3 +142,20 @@ dl dd a:hover {}
 .btns {text-align:center; margin-left:82px; overflow:hidden;}
 .btns a {display:inline-block; margin:0 15px 0 15px;}
 #form label strong {float:left; display:inline-block; padding-top:3px; width:82px; color:#000; line-height:20px;} 
+
+ul {
+    margin: 20px;
+}
+.input-color {
+    position: relative;
+}
+.input-color .color-box {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-color: #ccc;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+

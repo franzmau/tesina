@@ -1,6 +1,6 @@
 <?php 
 include('session_a.php');
-include('progresoc.php')
+include('progresoc.php');
 
 $id_a=$_GET["id"];
 
@@ -115,7 +115,7 @@ $id_a=$_GET["id"];
                         </tr>
                         </thead>
                       <?php
-                      llenar($_SESSION['id_salon'],$_SESSION['pid']);
+                      llenarlo($_SESSION['id_salon'],$_SESSION['pid']);
                       ?> 
                       </table>
                     </div>

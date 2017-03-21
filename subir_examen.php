@@ -47,6 +47,7 @@ if($_POST["sele"]==0){
     		
 	$count = mysqli_num_rows($ses_sql);
 	if($count>0){
+
 	 	
 	 		while($row = mysqli_fetch_array($ses_sql)){   //Creates a loop to loop through results
  
@@ -54,10 +55,24 @@ if($_POST["sele"]==0){
 		
 			if(mysqli_query($db,$sql)){
 				$a=mysqli_insert_id($db);
+				$c=count($_POST["mytext"]);
 				
+				$p=ceil($c/3.0);
+
+
+				$as=1;
+				echo "c vale ".$c." p vale ".$p;
 				foreach($_POST["mytext"] as $key => $text_field){
 
-					$sql1 = "INSERT INTO preguntas (`id_examen`, `pregunta`, `respuesta`, `hint`) VALUES (". $a . ", '".$text_field  ."', '".$_POST["mytext1"][$key]."','".$_POST["mytext2"][$key]."')"; 
+
+					$sql1 = "INSERT INTO preguntas (`id_examen`, `pregunta`, `respuesta`, `hint`, `id_area`) VALUES (". $a . ", '".$text_field  ."', '".$_POST["mytext1"][$key]."','".$_POST["mytext2"][$key]."',".$_POST[$as].")"; 
+					echo $sql1."<br><br>";
+					$p=$p-1;
+					if($p==0){
+					
+						$p=ceil($c/3.0);
+						$as=$as+1;
+					}
 
 					if(mysqli_query($db,$sql1)){
 
@@ -79,16 +94,30 @@ $sql = "INSERT INTO examenes (`id_profesor`, `id_salon`, `nombre`) VALUES (".$_S
 //echo $sql;  
 	if(mysqli_query($db,$sql)){
 			$a=mysqli_insert_id($db);
-
+			$c=count($_POST["mytext"]);
+			echo "c vale".$c;
+			$p=ceil($c/3.0);
+			
+			$as=1;
 			foreach($_POST["mytext"] as $key => $text_field){
 
-					"INSERT INTO preguntas (`id_examen`, `pregunta`, `respuesta`, `hint`) VALUES (". $a . ", '".$text_field  ."', '".$_POST["mytext1"][$key]."','".$_POST["mytext2"][$key]."')"; 
-						//echo $sql1;
+					$sql1="INSERT INTO preguntas (`id_examen`, `pregunta`, `respuesta`, `hint`, `id_area`) VALUES (". $a . ", '".$text_field  ."', '".$_POST["mytext1"][$key]."','".$_POST["mytext2"][$key]."',".$_POST[$as].")"; 
+						echo $sql1."<br>";
 					if(mysqli_query($db,$sql1)){
 
 					}else{
-						//echo "hubo error en la pregunta ".$key;
-					}					
+						echo "hubo error en la pregunta ".$key;
+					}
+					$p=$p-1;
+					if($p==0){
+						
+						$p=ceil($c/3.0);
+						$as=$as+1;
+						
+						
+					}
+
+
    				 }
 
 
